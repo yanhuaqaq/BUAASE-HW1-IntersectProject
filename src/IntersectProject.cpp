@@ -90,7 +90,7 @@ bool Circle::isIntersectWithCircle(Circle circle) {
 	double x_d = x - circle.x;
 	double y_d = y - circle.y;
 	double d = sqrt(x_d * x_d + y_d * y_d);
-	return d <= (r + circle.r);
+	return (d <= (r + circle.r) && d >= fabs(r - circle.r));
 
 }
 
