@@ -12,20 +12,20 @@ using namespace std;
 
 Line::Line(int x0, int y0, int x1, int y1)//利用直线上两点确定直线一般式方程
 {
-	A = y1 - y0;
-	B = x0 - x1;
-	C = x1 * y0 - x0 * y1;
+	A = (double)y1 - (double)y0;
+	B = (double)x0 - (double)x1;
+	C = (double)x1 * (double)y0 - (double)x0 * (double)y1;
 }
 
 bool Line::isParallel(Line line) //判断是否平行
 {
-	int d;
+	double d;
 	d = A * line.B - B * line.A;
 	return d == 0;
 }
 pair<double, double> Line::findIntersection(Line line) //找到两直线交点
 {
-	int d;
+	double d;
 	d = A * line.B - B * line.A;
 	double x;
 	double y;
